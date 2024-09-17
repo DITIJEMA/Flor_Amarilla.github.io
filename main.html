@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/flowers.png" type="image/x-icon">
+    <title>Flores Amarillas</title>
+</head>
+
+<body>
+    <div class="greetings">
+        <span>H</span>
+        <span>o</span>
+        <span>l</span>
+        <span>a</span>
+        <span>!</span>
+    </div>
+    <div class="description">
+        <span> Hoy es 21 de septiembre asi que un favor ingresa y selecina lo siguiente💖😊</span> 
+    </div>
+    
+    <!-- Input para el nombre -->
+    <div>
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+    </div>
+    
+    <!-- Selector de canciones -->
+    <div>
+        <label for="cancion">Selecciona una canción:</label>
+        <select id="cancion">
+            <option value="/Floricienta - Flores amarillas [Letra].mp3">Flores amarillas</option>
+            <option value="/Dibujarte Flores.mp3">Dibujarte Flores</option>
+            <option value="/Girasol.mp3">Girasol</option>
+            <option value="/Sherine - Kalam Eineh [Sub español + lyrics].mp3">Kalam Eineh</option>
+            <option value="/Café Tacvba - Las Flores (Audio).mp3">Las Flores</option>
+        </select>
+    </div>
+    
+    <div class="flower"></div>
+    <div class="flowers"></div>
+    <div class="flowers1"></div>
+    
+    <div class="button">
+        <button class="botones" style="display: block; background-color: #4CAF50; color: white; padding: 10px 20px; font-size: 16px; border: none; cursor: pointer;" onclick="saveDataAndRedirect()">
+            ¡Presiona Aquí!
+        </button>
+    </div>
+
+    <script>
+        function saveDataAndRedirect() {
+            const nombre = document.getElementById('nombre').value;
+            const cancion = document.getElementById('cancion').value;
+            if (nombre) {
+                // Guardar el nombre y la canción en localStorage
+                localStorage.setItem('nombreUsuario', nombre);
+                localStorage.setItem('cancionSeleccionada', cancion);
+                // Redirigir a la segunda página
+                window.location.href = 'flower.html';
+            } else {
+                alert('Por favor ingresa tu nombre.');
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+   
